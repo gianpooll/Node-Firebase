@@ -1,0 +1,30 @@
+extends ../plantilla.pug
+
+block contenido
+
+	if (error)
+		p #{error}
+
+	div(class="col-md-5 mx-auto")
+		div(class="card")
+			div(class="card-header text-center")
+				h3 Agregar Usuario
+			div(class="card-body")
+				form(action="/usuarios/nuevo-usuario" method="POST")
+					div(class="form-group")
+						label(for="nombreusuario") Nombre Usuario:
+						input(type="text" name="nombreusuario" class="form-control" placeholder="Nombre Usuario" autofocus)
+					div(class="form-group")
+						label(for="telefono") Telefono:
+						input(type="tel" name="telefono" class="form-control" placeholder="Telefono" id="telefono")
+					div(class="form-group")
+						label(for="email") Email:
+						input(type="email" name="email" class="form-control" placeholder="Email" id="email")
+					div(class="form-group")
+						label(for="contra") Contraseña:
+						input(type="password" name="contra" class="form-control" placeholder="Contraseña" id="contra")
+					hr(class="my-3")
+					div(class="form-group text-center")
+						button(type="submit" class="btn btn-success mr-3") Guardar!!
+						button(type="reset" class="btn btn-danger ml-3") Cancelar!!
+					

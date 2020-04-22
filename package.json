@@ -1,0 +1,21 @@
+{
+  "name": "node-firebase",
+  "version": "1.0.0",
+  "description": "Ejemplo de Express con Firebase",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app/index.js",
+    "start": "node app/index.js"
+  },
+  "keywords": [],
+  "author": "Gian Nilton Bonilla",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.10.0",
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0",
+    "pug": "^2.0.4"
+  }
+}
