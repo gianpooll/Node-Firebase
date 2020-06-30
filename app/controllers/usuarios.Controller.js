@@ -5,14 +5,22 @@ function formAgregaUsuario (req, res) {
 }
 
 function nuevoUsuario (req, res) {
-	console.log(req.body)
-	let {nombreusuario ,telefono} = req.body
-	console.log(nombreusuario)
-	console.log(telefono)
+	let {nombreusuario ,telefono, email, contra} = req.body
 	let error = ""
-	if(nombreusuario == "")
-	error = "Debes Ingresar un Usuario"
-	res.render("./usuarios/formAgregarUsuarios", { error })
+	if(nombreusuario == "") {
+		error = "Debes Ingresar un Usuario"
+		res.render("./usuarios/formAgregarUsuarios", { error })
+	}
+	else if (email == "") {
+		error = "Debes Ingresar un Correo Electronico"
+		res.render("./usuarios/formAgregarUsuarios", { error })
+	}
+	else if (contra == "") {
+		error = "Debes ingresar una contraseña valida"
+		res.render("./usuarios/formAgregarUsuarios", { error })
+	}
+	console.log(req.body)
+	
 }
 
 module.exports = {
